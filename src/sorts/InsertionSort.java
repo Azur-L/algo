@@ -62,7 +62,9 @@ public class InsertionSort {
         int h = 1;
         while (h < n / 3) h = 3 * h + 1;
         while (h >= 1) {
+            //数组变为h有序
             for (int i = h; i < n; i++) {
+                //将arr[i]插入到arr[i-h],arr[i-2h],arr[i-3h]
                 for (int j = i; j >= h && less(arr[j], arr[j - h]); j -= h)
                     exch(arr, j, j - h);
             }
